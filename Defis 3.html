@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Défis 2</title>
+        <title>Défis 3</title>
     </head>
     <body>
         <div id="carre"></div>
@@ -20,10 +20,16 @@
         </style>
 
         <script>
-            var haut = getComputedStyle(carre).marginTop;
-            document.onkeypress = function() {
-                if (keystate[38]) {
-                carre.style.marginTop = '100px';
+            
+            window.onkeydown = function (e) {
+                var key = e.keyCode || e.which;
+                switch (key) {
+                    case 38:
+                        carre.style.marginTop = '100px';
+                        setTimeout(function(){carre.style.marginTop = '200px';}, 2000);
+                        break;
+                    default:
+                        break;
                 }
             }
         </script>
