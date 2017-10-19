@@ -12,7 +12,7 @@
 
         <style type="text/css">
             #Text {
-                font-size: 200px;
+                font-size: 20px;
             }
         </style>
         
@@ -20,7 +20,12 @@
                 
             var Text = document.getElementById('Text');
 
-            Text.style.fontSize = 20px;
+            Text.onclick = function() {
+                if (Text.style.fontSize == '200px')
+                    Text.style.fontSize = '20px';
+                else 
+                    Text.style.fontSize = '200px';
+            };
     
         </script>
         
