@@ -34,6 +34,7 @@
                 margin-top: 10%;
                 margin-bottom: 20%;
             }
+
             #container {
                 position: fixed;
                 bottom: 50px;
@@ -43,7 +44,7 @@
                 flex-wrap: nowrap;
             }
             button {
-                background-color: #00FF55;
+                background-color: rgb(0,255,85);
                 height: 50px;
                 width: 100px;
             }
@@ -72,6 +73,24 @@
                         hei = hei + 10;
                         carre.style.height = hei + 'px';
                     }
+            }
+
+            var coloration = getComputedStyle(carre).backgroundColor;
+
+            b2.onclick = function() {
+                if(coloration == 'rgb(0, 153, 255)')
+                {
+                    carre.style.backgroundColor = "rgb(0, 255, 85)";
+                    coloration = 'rgb(0, 255, 85)';
+                }
+            }
+
+            b3.onclick = function() {
+                if(coloration == 'rgb(0, 255, 85)')
+                {
+                    carre.style.backgroundColor = "rgb(0, 153, 255)";
+                    coloration = 'rgb(0, 153, 255)';
+                }
             }
 
             var noob = getComputedStyle(carre).visibility;
