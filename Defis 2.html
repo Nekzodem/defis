@@ -8,17 +8,67 @@
     </head>
     <body>
 
+        <div id="carre"></div>
 
-
+        <div id=container>
+            <button id="b1">LVL UP</button>
+            <button id="b2">Ecologie for ever</button>
+            <button id="b3">Nique l'écologie</button>
+            <button id="b4">Tchuss</button>
+            <button id="b5">Re</button>
+        </div>    
 
 
         <style type="text/css">
            
+           body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+           }
+            #carre {
+                background-color: rgb(0,153,255);
+                height: 100px;
+                width: 100px;
+                margin-top: 10%;
+                margin-bottom: 20%;
+            }
+            #container {
+                position: fixed;
+                bottom: 50px;
+                text-align: center;
+
+                display: flex;
+                flex-wrap: nowrap;
+            }
+            button {
+                background-color: #00FF55;
+                height: 50px;
+                width: 100px;
+            }
+
         </style>
         
 
         <script>
-    
+
+            var b1 = document.getElementById('b1');
+            var carre = document.getElementById('carre');
+            var hei = getComputedStyle(carre).height;
+            hei = parseInt(hei);
+
+            b1.onclick = function() {
+                    console.log(hei);
+                    if (hei >= 300) {
+                        carre.style.height = '100px';
+                        hei = 100;
+                        alert('LVL DOWN')
+                    } else {
+                        hei = hei + 10;
+                        carre.style.height = hei + 'px';
+                    }
+            }
         </script>
         
     </body>
