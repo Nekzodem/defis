@@ -54,6 +54,10 @@
         <script>
 
             var b1 = document.getElementById('b1');
+            var b2 = document.getElementById('b2');
+            var b3 = document.getElementById('b3');
+            var b4 = document.getElementById('b4');
+            var b5 = document.getElementById('b5');
             var carre = document.getElementById('carre');
             var hei = getComputedStyle(carre).height;
             hei = parseInt(hei);
@@ -68,6 +72,24 @@
                         hei = hei + 10;
                         carre.style.height = hei + 'px';
                     }
+            }
+
+            var noob = getComputedStyle(carre).visibility;
+
+            b4.onclick = function() {
+                if(noob == 'visible')
+                {
+                    carre.style.visibility = 'hidden';
+                    noob = 'hidden';
+                }
+            }
+
+            b5.onclick = function() {
+                if(noob == 'hidden')
+                {
+                    carre.style.visibility = 'visible';
+                    noob = 'visible';
+                }
             }
         </script>
         
